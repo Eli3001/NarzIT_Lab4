@@ -16,5 +16,11 @@ elif [ "$1" == "--logs" ]; then
             echo $filename > $filename
             echo $0 >> $filename
             echo $(date) >> $filename
-        done    
+        done 
+
+elif [ "$1" == "--help" ]; then
+    echo "--date             Wyswietla obecna date."
+    echo "--logs [n=100]     Tworzy n plikow log[n].txt."
+    echo "--help             Wyswietla liste instrukcji."
+
 fi
