@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if [ "$1" == "--date" ]; then
+if [ "$1" == "--date" ] || [ "$1" == "-d" ]; then
     echo $(date)
-elif [ "$1" == "--logs" ]; then
+elif [ "$1" == "--logs" ] || [ "$1" == "-l" ]; then
 
     if [ -z "$2" ]; then
         iters=100
@@ -18,7 +18,9 @@ elif [ "$1" == "--logs" ]; then
             echo $(date) >> $filename
         done 
 
-elif [ "$1" == "--help" ]; then
+elif [ "$1" == "--help" ] || [ "$1" == "-h" ]; then
+    echo ""
+    echo "skrypt.sh [-d | --date] [-l | --logs] [-h | --help]"
     echo "--date             Wyswietla obecna date."
     echo "--logs [n=100]     Tworzy n plikow log[n].txt."
     echo "--help             Wyswietla liste instrukcji."
