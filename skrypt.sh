@@ -3,7 +3,14 @@
 if [ "$1" == "--date" ]; then
     echo $(date)
 elif [ "$1" == "--logs" ]; then
-    for i in {1..100}
+
+    if [ -z "$2" ]; then
+        iters=100
+    else
+        iters=$2
+    fi
+
+    for ((i=1; i<=$iters; i++))
         do
             filename="log${i}.txt"
             echo $filename > $filename
@@ -11,4 +18,3 @@ elif [ "$1" == "--logs" ]; then
             echo $(date) >> $filename
         done    
 fi
-
