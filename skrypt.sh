@@ -25,4 +25,15 @@ elif [ "$1" == "--help" ] || [ "$1" == "-h" ]; then
     echo "--logs [n=100]     Tworzy n plikow log[n].txt."
     echo "--help             Wyswietla liste instrukcji."
 
+elif [ "$1" == "--init" ]; then
+
+name="github.com/Eli3001/NarzIT_Lab4.git"
+
+git clone https://$name
+
+r=$(basename "$name" .git)
+
+export PATH=$(pwd)/"$name":$PATH
+
 fi
+
